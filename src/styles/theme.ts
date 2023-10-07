@@ -11,7 +11,7 @@ export default {
   },
   font: {
     family:
-      "Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     light: 300,
     normal: 400,
     bold: 600,
@@ -30,14 +30,26 @@ export default {
     }
   },
   colors: {
-    white: '#fff',
-    gray_50: '#f0efeb',
-    gray_300: '#343a40',
-    yellow_300: '#F1C40F',
-    purple_100: '#7F57DF',
-    purple_300: '#5855E9',
-    red_300: '#FF6666',
-    black: '#0D0D0D'
+    primary: {
+      blue: '#002F52'
+    },
+    secondary: {
+      light_blue: '#009BFF'
+    },
+    neutral: {
+      white: '#fff',
+      black: '#0D0D0D',
+      strong_gray: '#303030',
+      light_gray: '#EBECEE',
+      gray_50: '#f0efeb',
+      gray_300: '#343a40'
+    },
+    others: {
+      yellow_300: '#F1C40F',
+      purple_100: '#7F57DF',
+      purple_300: '#5855E9',
+      red_300: '#FF6666'
+    }
   },
   spacings: {
     xxxsmall: '0.8rem',

@@ -1,4 +1,4 @@
-import Dashboard from 'templates/Dashboard';
+import Dashboard from 'templates/HomeTemplate';
 
 export default function Home() {
   return (

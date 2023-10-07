@@ -25,6 +25,7 @@ const SearchInput = ({ onChange, onSearch }: SearchInputProps) => {
         type="text"
         name="search"
         onChange={handleChange}
+        placeholder="Encontre seu curso..."
       />
     </S.WrapperInput>
   );

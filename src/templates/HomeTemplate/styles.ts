@@ -12,6 +12,7 @@ export const ContainerCards = styled.div`
   justify-content: center;
   padding: 1.8rem 0;
   gap: 2.4rem;
+  background-color: ${({ theme }) => theme.colors.neutral.light_gray};
 
   @media (max-width: 1100px) {
     display: flex;
@@ -92,13 +93,15 @@ export const ContentMessage = styled.div`
   }
 `;
 
-export const titleBanner = styled.h1`
-  color: ${({ theme }) => theme.colors.neutral.white};
+export const titleBanner = styled.h1<{ darkColor?: boolean }>`
+  color: ${({ theme, darkColor }) =>
+    !darkColor ? theme.colors.neutral.white : theme.colors.neutral.strong_gray};
   font-weight: 400;
 `;
 
-export const textBanner = styled.p`
-  color: ${({ theme }) => theme.colors.neutral.white};
+export const textBanner = styled.p<{ darkColor?: boolean }>`
+  color: ${({ theme, darkColor }) =>
+    !darkColor ? theme.colors.neutral.white : theme.colors.neutral.strong_gray};
   font-weight: 300;
   font-size: small;
 `;
@@ -118,4 +121,12 @@ export const BoxImg = styled.img`
   @media (max-width: 1000px) {
     display: none;
   }
+`;
+
+export const SecondSection = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 2.4rem;
+  background-color: ${({ theme }) => theme.colors.neutral.light_gray};
 `;

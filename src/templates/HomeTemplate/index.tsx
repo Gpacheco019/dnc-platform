@@ -1,4 +1,5 @@
 import Card from 'components/Card';
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Logo from 'components/Logo';
 import SearchInput from 'components/Search-input';
@@ -37,6 +38,23 @@ const HomeTemplate = () => {
         <Card label="Formação em" curseName="Dados" />
         <Card label="Formação em" curseName="Dados" />
       </S.ContainerCards>
+      <S.SecondSection>
+        <S.BoxBanner>
+          <S.BoxImg src="/img/Classroom-rafiki.png" />
+          <S.ContentMessage>
+            <S.titleBanner darkColor={true}>
+              Venha estudar com a DNC
+            </S.titleBanner>
+            <S.textBanner darkColor={true}>
+              Você aprenderá com profissionais ja estabelecidos no mercado, além
+              de absorver conceitos importantes, saberá quando e onde aplicar de
+              forma eficiente. Chega de fazer cursos sem profundidade, vem para
+              DNC.
+            </S.textBanner>
+          </S.ContentMessage>
+        </S.BoxBanner>
+      </S.SecondSection>
+      <Footer />
 
       {/* <Main>
         <S.Container>

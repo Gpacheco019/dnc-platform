@@ -33,3 +33,19 @@ export const TextCurse = styled.h1`
     font-size: 24px;
   }
 `;
+
+export const WrapperAction = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+
+  @media (max-width: 972px) {
+    margin: 0.5rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 672px) {
+    margin: 0.5rem;
+    justify-content: center;
+  }
+`;

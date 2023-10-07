@@ -1,8 +1,5 @@
-import Link from 'next/link';
-
 import Header from 'components/Header';
 import Logo from 'components/Logo';
-import { Main } from 'components/Main/';
 import SearchInput from 'components/Search-input';
 
 import * as S from './styles';
@@ -19,12 +16,25 @@ const HomeTemplate = () => {
           <SearchInput onChange={handleChange} onSearch={handleClick} />
         </S.WrapperContent>
       </Header>
+      <S.PrincipalBanner>
+        <S.BoxBanner>
+          <S.ContentMessage>
+            <S.titleBanner>Ta afim de alavancar sua carreira ?</S.titleBanner>
+            <S.textBanner>
+              Aqui na DNC somos experts nisso, a nossa grade cursos te
+              proporciona um conhecimento de ponta a ponta.
+            </S.textBanner>
+          </S.ContentMessage>
 
-      <Main>
+          <S.BoxImg src="/img/goals-rafiki.png" />
+        </S.BoxBanner>
+      </S.PrincipalBanner>
+
+      {/* <Main>
         <S.Container>
           <Link href="/about">Link: About</Link>
         </S.Container>
-      </Main>
+      </Main> */}
     </>
   );
 };

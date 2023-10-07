@@ -1,3 +1,4 @@
+import Card from 'components/Card';
 import Header from 'components/Header';
 import Logo from 'components/Logo';
 import SearchInput from 'components/Search-input';
@@ -16,6 +17,7 @@ const HomeTemplate = () => {
           <SearchInput onChange={handleChange} onSearch={handleClick} />
         </S.WrapperContent>
       </Header>
+
       <S.PrincipalBanner>
         <S.BoxBanner>
           <S.ContentMessage>
@@ -29,6 +31,12 @@ const HomeTemplate = () => {
           <S.BoxImg src="/img/goals-rafiki.png" />
         </S.BoxBanner>
       </S.PrincipalBanner>
+      <S.ContainerCards>
+        <Card label="Formação em" curseName="Dados" />
+        <Card label="Formação em" curseName="Dados" />
+        <Card label="Formação em" curseName="Dados" />
+        <Card label="Formação em" curseName="Dados" />
+      </S.ContainerCards>
 
       {/* <Main>
         <S.Container>

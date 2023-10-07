@@ -2,6 +2,48 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const ContainerCards = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.8rem 0;
+  gap: 2.4rem;
+
+  @media (max-width: 1100px) {
+    display: flex;
+    justify-content: center;
+
+    gap: 1.4rem;
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(4, 18rem);
+
+    gap: 1.2rem;
+  }
+
+  @media (max-width: 800px) {
+    display: grid;
+    grid-template-columns: repeat(4, 17rem);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 750px) {
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+  }
+
+  @media (max-width: 672px) {
+    display: grid;
+    grid-template-columns: repeat(2, 16rem);
+    padding: 1.8rem 1.5rem;
+  }
 `;
 
 export const WrapperContent = styled.div`

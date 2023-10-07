@@ -4,11 +4,13 @@ import SearchInput from 'components/Search-input';
 import * as S from './styles';
 
 const Header = () => {
+  const handleChange = (value: string) => console.log('header', value);
+  const handleClick = () => alert('click');
   return (
     <S.Wrapper>
       <S.WrapperContent>
         <Logo />
-        <SearchInput />
+        <SearchInput onChange={handleChange} onSearch={handleClick} />
       </S.WrapperContent>
     </S.Wrapper>
   );

@@ -10,9 +10,7 @@ describe('<Main />', () => {
       </Main>
     );
 
-    expect(
-      screen.getByRole('heading', { name: /next example/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /next example/i }));
 
     expect(container).toMatchSnapshot();
   });

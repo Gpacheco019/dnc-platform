@@ -15,7 +15,9 @@ export const SearchIcon = styled(MdSearch).attrs({
   size: '20'
 })``;
 
-export const ActionIcon = styled.span`
+export const ActionIcon = styled.span.attrs({
+  'data-testid': 'action-search-icon'
+})`
   height: 100%;
   padding: 0.5rem;
   cursor: pointer;

@@ -8,9 +8,6 @@ module.exports = {
     formats: ['image/avif', 'image/webp']
   },
   compiler: {
-    styledComponents: true,
-    removeConsole: {
-      exclude: ['error']
-    }
+    styledComponents: true
   }
 };

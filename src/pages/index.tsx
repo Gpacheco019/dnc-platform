@@ -1,9 +1,56 @@
-import Dashboard from 'templates/HomeTemplate';
+import { useRouter } from 'next/router';
+import { useMemo, useState } from 'react';
+import { useQuery } from 'react-query';
 
-export default function Home() {
+import debounce from 'lodash.debounce';
+import { Curses, useFetchCurses } from 'services/courses';
+
+import { Spinner } from 'components/Loading';
+
+import HomeTemplate from 'templates/HomeTemplate';
+
+const Home = () => {
+  const { push } = useRouter();
+  const [search, setSearch] = useState('');
+  const query = useQuery('Cursos', useFetchCurses);
+
+  const listCourses = useMemo(() => {
+    if (!query.data) return [];
+
+    const courses = query.data as Curses[];
+
+    return courses
+      .filter((curse) => {
+        if (!search) return true;
+        return curse.associate.some((keyword) =>
+          keyword.includes(search.toLowerCase())
+        );
+      })
+      .map(({ id, name }) => ({ id, name }));
+  }, [query.data, search]);
+
+  const handleOnSearch = debounce((value: string) => {
+    setSearch(value);
+  }, 300);
+
+  const handleTakeRedirect = (value: string) => {
+    console.log('pagina', value);
+    push(`/cursos/${value.toLowerCase()}`);
+  };
+
   return (
     <>
-      <Dashboard />
+      {!query.data ? (
+        <Spinner />
+      ) : (
+        <HomeTemplate
+          courseData={listCourses}
+          onChangeSearch={handleOnSearch}
+          onClickRedirect={handleTakeRedirect}
+        />
+      )}
     </>
   );
-}
+};
+
+export default Home;

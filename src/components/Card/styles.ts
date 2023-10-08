@@ -27,10 +27,10 @@ export const TextLabel = styled.h1`
 export const TextCurse = styled.h1`
   color: ${({ theme }) => theme.colors.neutral.white};
   width: 600;
-  font-size: 36px;
+  font-size: 30px;
 
   @media (max-width: 1100px) {
-    font-size: 24px;
+    font-size: 16px;
   }
 `;
 

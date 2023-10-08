@@ -6,8 +6,25 @@ import SearchInput from 'components/Search-input';
 
 import * as S from './styles';
 
-const HomeTemplate = () => {
-  const handleChange = (value: string) => console.log('header', value);
+type CousesData = {
+  id: number;
+  name: string;
+};
+
+export type HomeTemplateProps = {
+  onChangeSearch?: (value: string) => void;
+  onClickSearch?: () => void;
+  onClickRedirect?: (courseName: string) => void;
+  courseData: CousesData[];
+};
+
+const HomeTemplate = ({
+  courseData,
+  onChangeSearch,
+  onClickRedirect
+}: HomeTemplateProps) => {
+  const handleChange = (value: string) =>
+    onChangeSearch && onChangeSearch(value);
   const handleClick = () => alert('click');
 
   return (
@@ -33,10 +50,14 @@ const HomeTemplate = () => {
         </S.BoxBanner>
       </S.PrincipalBanner>
       <S.ContainerCards>
-        <Card label="Formação em" curseName="Dados" />
-        <Card label="Formação em" curseName="Dados" />
-        <Card label="Formação em" curseName="Dados" />
-        <Card label="Formação em" curseName="Dados" />
+        {courseData?.map((course) => (
+          <Card
+            key={course.id}
+            label="Formação em"
+            curseName={course.name}
+            onClick={onClickRedirect}
+          />
+        ))}
       </S.ContainerCards>
       <S.SecondSection>
         <S.BoxBanner>
@@ -55,12 +76,6 @@ const HomeTemplate = () => {
         </S.BoxBanner>
       </S.SecondSection>
       <Footer />
-
-      {/* <Main>
-        <S.Container>
-          <Link href="/about">Link: About</Link>
-        </S.Container>
-      </Main> */}
     </>
   );
 };

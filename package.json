@@ -41,6 +41,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
+    "react-query": "^3.39.3",
     "styled-components": "5.3.11"
   },
   "devDependencies": {
@@ -56,6 +57,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/cors": "^2.8.14",
     "@types/jest": "^27.5.0",
+    "@types/lodash.debounce": "^4.0.7",
     "@types/node": "^20.8.2",
     "@types/react": "^18.2.25",
     "@types/styled-components": "^5.1.26",

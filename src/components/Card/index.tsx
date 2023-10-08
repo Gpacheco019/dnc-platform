@@ -5,12 +5,12 @@ import * as S from './styles';
 export type CardProps = {
   label: string;
   curseName: string;
-  onClick?: () => void;
+  onClick?: (curseName: string) => void;
 };
 
 const Card = ({ label, curseName, onClick }: CardProps) => {
   const handleClick = () => {
-    onClick && onClick();
+    onClick && onClick(curseName);
   };
 
   return (

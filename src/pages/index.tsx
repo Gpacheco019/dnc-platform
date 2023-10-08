@@ -34,7 +34,6 @@ const Home = () => {
   }, 300);
 
   const handleTakeRedirect = (value: string) => {
-    console.log('pagina', value);
     push(`/cursos/${value.toLowerCase()}`);
   };
 

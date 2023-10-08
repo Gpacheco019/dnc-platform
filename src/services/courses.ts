@@ -2,8 +2,6 @@ import { AxiosResponse } from 'axios';
 
 import api from './api';
 
-export const url = '/api/curses';
-
 export type Curses = {
   id: number;
   name: string;
@@ -18,7 +16,7 @@ export async function useFetchCurses() {
       }, 8000);
     });
 
-    const responsePromise = api.get(url);
+    const responsePromise = api.get('/api/courses');
 
     const response = (await Promise.race([
       responsePromise,
@@ -28,5 +26,27 @@ export async function useFetchCurses() {
     return response.data;
   } catch (error) {
     console.error('Houve um erro ao buscar os cursos:', error);
+  }
+}
+
+export async function useFetchByFormation(course: string) {
+  try {
+    const timeoutPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error('Tempo limite da solicitação excedido'));
+      }, 8000);
+    });
+
+    const responsePromise = api.get(`/api/formation?course=${course}`);
+
+    const response = (await Promise.race([
+      responsePromise,
+      timeoutPromise
+    ])) as AxiosResponse;
+
+    return response.data;
+  } catch (error) {
+    console.error('Houve um erro ao buscar a formação desejada:', error);
+    throw error; // Propague o erro para tratamento posterior, se necessário
   }
 }

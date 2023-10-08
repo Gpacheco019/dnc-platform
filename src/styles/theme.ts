@@ -41,6 +41,7 @@ export default {
       black: '#0D0D0D',
       strong_gray: '#303030',
       light_gray: '#EBECEE',
+      gray: '#5E5B5B',
       gray_50: '#f0efeb',
       gray_300: '#343a40'
     },

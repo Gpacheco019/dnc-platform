@@ -20,6 +20,6 @@ export const Wrapper = styled.button<WrapperProps>`
   }
 
   @media (max-width: 672px) {
-    width: 9rem;
+    width: 9.5rem;
   }
 `;

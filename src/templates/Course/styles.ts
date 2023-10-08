@@ -6,47 +6,6 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const ContainerCards = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 1.8rem 0;
-  gap: 2.4rem;
-  background-color: ${({ theme }) => theme.colors.neutral.light_gray};
-
-  @media (max-width: 1100px) {
-    display: flex;
-    justify-content: center;
-
-    gap: 1.4rem;
-  }
-
-  @media (max-width: 900px) {
-    display: grid;
-    grid-template-columns: repeat(4, 18rem);
-
-    gap: 1.2rem;
-  }
-
-  @media (max-width: 800px) {
-    display: grid;
-    grid-template-columns: repeat(4, 17rem);
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  @media (max-width: 750px) {
-    display: grid;
-    grid-template-columns: repeat(3, 15rem);
-  }
-
-  @media (max-width: 672px) {
-    display: grid;
-    grid-template-columns: repeat(2, 16rem);
-    padding: 1.8rem 1.5rem;
-  }
-`;
-
 export const WrapperContent = styled.div`
   width: 100%;
   height: 100%;
@@ -56,7 +15,7 @@ export const WrapperContent = styled.div`
 `;
 
 export const PrincipalBanner = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary.blue};
+  background-color: ${({ theme }) => theme.colors.secondary.light_blue};
   height: 45.12rem;
   display: flex;
   justify-content: center;
@@ -81,7 +40,14 @@ export const BoxBanner = styled.div`
 
   @media (max-width: 700px) {
     padding: 0 2rem;
-    margin: 1rem 0;
+  }
+
+  @media (max-width: 590px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    margin: 2rem;
   }
 `;
 
@@ -93,6 +59,8 @@ export const ContentMessage = styled.div`
   width: 57rem;
   text-align: center;
 
+  gap: 1rem;
+
   @media (max-width: 700px) {
     width: 100%;
   }
@@ -102,6 +70,17 @@ export const titleBanner = styled.h1<{ darkColor?: boolean }>`
   color: ${({ theme, darkColor }) =>
     !darkColor ? theme.colors.neutral.white : theme.colors.neutral.strong_gray};
   font-weight: 400;
+  display: flex;
+  gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 700px) {
+    text-align: center;
+    justify-content: center;
+    gap: 0.1rem;
+    margin: 1rem;
+  }
 `;
 
 export const textBanner = styled.p<{ darkColor?: boolean }>`
@@ -109,6 +88,11 @@ export const textBanner = styled.p<{ darkColor?: boolean }>`
     !darkColor ? theme.colors.neutral.white : theme.colors.neutral.strong_gray};
   font-weight: 300;
   font-size: small;
+  width: 41rem;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export const ContentArt = styled.div`
@@ -121,7 +105,7 @@ export const ContentArt = styled.div`
 
 export const BoxImg = styled.img`
   display: flex;
-  width: 50rem;
+  width: 40rem;
 
   @media (max-width: 1000px) {
     display: none;
@@ -134,4 +118,58 @@ export const SecondSection = styled.div`
   justify-content: space-around;
   gap: 2.4rem;
   background-color: ${({ theme }) => theme.colors.neutral.light_gray};
+  margin: 2.4rem 0;
+
+  @media (max-width: 590px) {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const Contrast = styled.p`
+  color: ${({ theme }) => theme.colors.neutral.strong_gray};
+  font-weight: 400;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const List = styled.ul``;
+
+export const ListItem = styled.li`
+  list-style: inherit;
+  color: ${({ theme }) => theme.colors.neutral.gray};
+  text-align: left;
+  font-weight: 300;
+`;
+
+export const SecondTextBanner = styled(titleBanner)`
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
+
+  @media (max-width: 700px) {
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+`;
+
+export const SecondContent = styled(ContentMessage)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  text-align: center;
+  margin: 3rem;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  width: fit-content;
+
+  @media (max-width: 700px) {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+  }
 `;

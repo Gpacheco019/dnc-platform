@@ -4,7 +4,7 @@ import * as S from './styles';
 
 export type SearchInputProps = {
   onChange: (value: string) => void;
-  onSearch: () => void;
+  onSearch?: () => void;
 };
 
 const SearchInput = ({ onChange, onSearch }: SearchInputProps) => {

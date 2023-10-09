@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { useFetchByFormation } from 'services/courses';
@@ -7,7 +8,10 @@ import { Spinner } from 'components/Loading';
 
 import CourseTemplate, { DataFormation } from 'templates/Course';
 
+export type ButtonActive = 'videos aulas' | 'doc' | 'quiz';
+
 const Course = ({ course }: { course: string }) => {
+  const [register, setRegiste] = useState(false);
   const fetchData = useFetchByFormation(course);
 
   const { data: formationData } = useQuery<DataFormation>(
@@ -21,12 +25,18 @@ const Course = ({ course }: { course: string }) => {
     }
   );
 
+  const handleRegister = () => setRegiste(true);
+
   return (
     <>
       {!formationData ? (
         <Spinner />
       ) : (
-        <CourseTemplate dataFormation={formationData} />
+        <CourseTemplate
+          dataFormation={formationData}
+          register={register}
+          onRegister={handleRegister}
+        />
       )}
     </>
   );

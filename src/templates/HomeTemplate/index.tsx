@@ -25,14 +25,13 @@ const HomeTemplate = ({
 }: HomeTemplateProps) => {
   const handleChange = (value: string) =>
     onChangeSearch && onChangeSearch(value);
-  const handleClick = () => alert('click');
 
   return (
     <>
       <Header>
         <S.WrapperContent>
           <Logo />
-          <SearchInput onChange={handleChange} onSearch={handleClick} />
+          <SearchInput onChange={handleChange} />
         </S.WrapperContent>
       </Header>
 

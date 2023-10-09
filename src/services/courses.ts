@@ -47,6 +47,6 @@ export async function useFetchByFormation(course: string) {
     return response.data;
   } catch (error) {
     console.error('Houve um erro ao buscar a formação desejada:', error);
-    throw error; // Propague o erro para tratamento posterior, se necessário
+    throw error;
   }
 }

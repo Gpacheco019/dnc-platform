@@ -173,3 +173,65 @@ export const SecondContent = styled(ContentMessage)`
     margin: 0;
   }
 `;
+
+export const ActionButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+
+  @media (max-width: 650px) {
+    margin: 1rem;
+  }
+`;
+
+export const WrapperContentFormation = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+`;
+
+export const PrincipalZoneContent = styled.div`
+  min-height: fit-content;
+  @media (max-width: 650px) {
+    height: 340px;
+    margin: 1rem;
+  }
+`;
+
+export const VideoContent = styled.iframe`
+  border: none;
+  border-radius: 0.5rem;
+
+  @media (max-width: 650px) {
+    width: 450px;
+    height: 240px;
+  }
+
+  @media (max-width: 650px) {
+    width: 320px;
+    height: 240px;
+  }
+`;
+
+export const DocContent = styled.div`
+  width: 700px;
+  height: 300px;
+  font-weight: 300;
+
+  @media (max-width: 650px) {
+    width: fit-content;
+    margin: 1rem;
+  }
+`;
+
+export const QuizContent = styled.div`
+  height: 300px;
+`;
+
+export const QuizItem = styled.p`
+  font-weight: 300;
+  text-align: center;
+`;

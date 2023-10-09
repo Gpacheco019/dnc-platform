@@ -31,7 +31,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           'Javascript',
           'React',
           'Typescript'
-        ]
+        ],
+        content: {
+          video: 'https://www.youtube.com/embed/74K9cU99WWg',
+          doc: 'O back-end é responsável por conter a lógica de negócios de uma aplicação. Isso significa que ele controla como os dados são processados, armazenados e apresentados aos usuários. Ele lida com regras de negócios complexas e operações que são invisíveis aos usuários finais.gerencia a persistência de dados, armazenando informações em bancos de dados ou outros sistemas de armazenamento. Ele garante a integridade e a segurança dos dados, permitindo que eles sejam acessados e recuperados quando necessário.',
+          quiz: [
+            'Na sua opinião, qual é o aspecto mais importante do back-end no desenvolvimento de software, e por quê?',
+            'Como você vê o impacto do back-end na segurança e na escalabilidade de uma aplicação ou sistema de software?'
+          ]
+        }
       });
       break;
     case 'marketing':
@@ -57,7 +65,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           'Google Analytics',
           'Negociação',
           'Processo comercial'
-        ]
+        ],
+        content: {
+          video: 'https://www.youtube.com/embed/_6WXvzRXXtk',
+          doc: 'O CRM ajuda as empresas a melhorar suas interações com os clientes, permitindo que elas entendam melhor as necessidades e preferências dos clientes. Isso leva a relacionamentos mais fortes e duradouros. Coleta e Análise de Dados: O CRM permite que as empresas coletem e armazenem dados valiosos sobre seus clientes, como histórico de compras, preferências, comportamentos e informações de contato. Esses dados podem ser usados para análises profundas e para tomar decisões informadas.',
+          quiz: [
+            'Como o uso eficaz do CRM pode melhorar a satisfação do cliente e a fidelização à marca em uma empresa?',
+            'Quais são os principais desafios que as empresas enfrentam ao implementar um sistema de CRM e como eles podem ser superados para obter os benefícios máximos?'
+          ]
+        }
       });
       break;
     case 'produto':
@@ -80,7 +96,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           'UX/UI Design',
           'Teste de usabilidade',
           'Ciclo de vida do produto'
-        ]
+        ],
+        content: {
+          video: 'https://www.youtube.com/embed/jLuaD605ENA',
+          doc: 'O PO está principalmente focado no produto ou no serviço que está sendo desenvolvido. Ele representa os interesses dos stakeholders e dos usuários finais para garantir que o produto atenda às suas necessidades e expectativas. O PM está focado na gestão geral do projeto. Ele é responsável por garantir que o projeto seja concluído dentro do escopo, prazo e orçamento definidos, enquanto atende aos objetivos de qualidade.',
+          quiz: [
+            'Como você descreveria as principais diferenças de responsabilidades entre um Product Owner (PO) e um Project Manager (PM) em um projeto de desenvolvimento de software e como essas diferenças contribuem para o sucesso do projeto?',
+            'Qual é o papel do Product Owner (PO) na priorização e tomada de decisões sobre o que deve ser desenvolvido, e como essa função se diferencia das responsabilidades de um Project Manager (PM) em relação ao escopo, prazo e orçamento do projeto?'
+          ]
+        }
       });
       break;
     case 'dados':
@@ -107,7 +131,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           'Estatística',
           'Manipulação de dados',
           'Limpeza de dados'
-        ]
+        ],
+        content: {
+          video: 'https://www.youtube.com/embed/9jWsS6gxecA',
+          doc: ' Um engenheiro de dados é responsável por coletar dados de várias fontes, incluindo bancos de dados, sistemas de registro, feeds de streaming, APIs e muito mais. Isso pode envolver a criação de scripts de coleta de dados e a configuração de conexões com fontes de dados externas.',
+          quiz: [
+            'Como a evolução das tecnologias de armazenamento e processamento de dados impactou as responsabilidades e as habilidades necessárias para um engenheiro de dados ao longo do tempo?',
+            'Qual é o papel de um engenheiro de dados na garantia da qualidade dos dados e na conformidade com regulamentações de privacidade, como o GDPR (Regulamento Geral de Proteção de Dados), em um ambiente de análise de dados?'
+          ]
+        }
       });
       break;
     default:

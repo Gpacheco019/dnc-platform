@@ -121,7 +121,7 @@ export const ContentArt = styled.div`
 
 export const BoxImg = styled.img`
   display: flex;
-  width: 50rem;
+  width: 45rem;
 
   @media (max-width: 1000px) {
     display: none;

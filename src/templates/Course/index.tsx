@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Button from 'components/Button';
 import CardInfo from 'components/Card-info';
 import Footer from 'components/Footer';
@@ -18,17 +20,34 @@ export type DataFormation = {
     img: string;
   };
   topics: string[];
+  content: {
+    video: string;
+    doc: string;
+    quiz: string[];
+  };
 };
 
 export type CourseTemplateProps = {
-  onChangeSearch?: (value: string) => void;
-  onClickSearch?: () => void;
-  onClickRedirect?: (courseName: string) => void;
+  onRegister?: () => void;
   dataFormation?: DataFormation;
+  register: boolean;
 };
 
-const CourseTemplate = ({ dataFormation }: CourseTemplateProps) => {
-  const handleClick = () => alert('click');
+const buttonActions = [
+  { name: 'video aula' },
+  { name: 'doc' },
+  { name: 'quiz' }
+];
+
+const CourseTemplate = ({
+  dataFormation,
+  register,
+  onRegister
+}: CourseTemplateProps) => {
+  const [buttonActive, setButtonActive] = useState('');
+
+  const handleClick = () => onRegister && onRegister();
+  const handleClickButton = (value: string) => () => setButtonActive(value);
 
   return (
     <>
@@ -46,35 +65,81 @@ const CourseTemplate = ({ dataFormation }: CourseTemplateProps) => {
               Formação em <S.Contrast>{dataFormation?.name}</S.Contrast>
             </S.titleBanner>
             <S.textBanner>{dataFormation?.description}</S.textBanner>
-
-            <Button onClick={handleClick}>Inscrever-se</Button>
+            {!register && <Button onClick={handleClick}>Inscrever-se</Button>}
+            {register && <Button>Matriculado</Button>}
           </S.ContentMessage>
 
           <S.BoxImg src={dataFormation?.imageUrl} />
         </S.BoxBanner>
       </S.PrincipalBanner>
       <S.SecondSection>
-        <S.BoxBanner>
-          <CardInfo
-            duration={dataFormation?.duration ?? ''}
-            nameTeacher={dataFormation?.teacher.name ?? ''}
-            rate={dataFormation?.rate ?? 0}
-            urlImage={dataFormation?.teacher.img ?? ''}
-          />
-          <S.SecondContent>
-            <h2>Pré-requisitos:</h2>
-            <span>*{dataFormation?.required[0]}</span>
-            <S.SecondTextBanner darkColor={true}>
-              O que você irá aprender:
-            </S.SecondTextBanner>
-            <S.List>
-              {dataFormation?.topics.map((item) => (
-                <S.ListItem key={item}>{item}</S.ListItem>
+        {!register && (
+          <S.BoxBanner>
+            <>
+              <CardInfo
+                duration={dataFormation?.duration ?? ''}
+                nameTeacher={dataFormation?.teacher.name ?? ''}
+                rate={dataFormation?.rate ?? 0}
+                urlImage={dataFormation?.teacher.img ?? ''}
+              />
+              <S.SecondContent>
+                <h2>Pré-requisitos:</h2>
+                <span>{dataFormation?.required[0]}</span>
+                <S.SecondTextBanner darkColor={true}>
+                  O que você irá aprender:
+                </S.SecondTextBanner>
+                <S.List>
+                  {dataFormation?.topics.map((item) => (
+                    <S.ListItem key={item}>{item}</S.ListItem>
+                  ))}
+                </S.List>
+                <Button onClick={handleClick}>Inscrever-se</Button>
+              </S.SecondContent>
+            </>
+          </S.BoxBanner>
+        )}
+        {register && (
+          <S.WrapperContentFormation>
+            <S.ActionButtons>
+              {buttonActions.map((btn) => (
+                <Button key={btn.name} onClick={handleClickButton(btn.name)}>
+                  {btn.name}
+                </Button>
               ))}
-            </S.List>
-            <Button onClick={handleClick}>Inscrever-se</Button>
-          </S.SecondContent>
-        </S.BoxBanner>
+            </S.ActionButtons>
+            <S.PrincipalZoneContent>
+              {buttonActive === '' && (
+                <>
+                  <S.Contrast>
+                    Bora começar ? clique nos botões acima para iniciar seus
+                    estudos!
+                  </S.Contrast>
+                  <S.BoxImg src="/img/start.png" />
+                </>
+              )}
+              {buttonActive === 'video aula' && (
+                <S.VideoContent
+                  width="600"
+                  height="415"
+                  src={dataFormation?.content.video}
+                  allowFullScreen={true}
+                />
+              )}
+
+              {buttonActive === 'doc' && (
+                <S.DocContent>{dataFormation?.content.doc}</S.DocContent>
+              )}
+
+              {buttonActive === 'quiz' && (
+                <S.QuizContent>
+                  {dataFormation?.content.quiz.map((item) => (
+                    <S.QuizItem key={item}>{item}</S.QuizItem>
+                  ))}
+                </S.QuizContent>
+              )}
+            </S.PrincipalZoneContent>
+          </S.WrapperContentFormation>
+        )}
       </S.SecondSection>
       <Footer />
     </>

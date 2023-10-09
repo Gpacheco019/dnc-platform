@@ -2,7 +2,7 @@ import * as S from './styles';
 
 export type ButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   variantColor?: 'primary' | 'secondary';
 };
 

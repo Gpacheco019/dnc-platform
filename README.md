@@ -30,7 +30,7 @@
 
 ###  Integração com Data JSON
 
--  Utilizando a API ROUTES do Next.js simulando métodos HTTP para requisição de informações dos cursos.
+-  Utilizando a API ROUTES do Next.js simulando um back-end.
 
 
 

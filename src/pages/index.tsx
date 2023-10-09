@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import debounce from 'lodash.debounce';
-import { Curses, useFetchCurses } from 'services/courses';
+import { Curses, useFetchCourses } from 'services/courses';
 
 import { Spinner } from 'components/Loading';
 
@@ -12,7 +12,7 @@ import HomeTemplate from 'templates/HomeTemplate';
 const Home = () => {
   const { push } = useRouter();
   const [search, setSearch] = useState('');
-  const query = useQuery('Cursos', useFetchCurses);
+  const query = useQuery('Cursos', useFetchCourses);
 
   const listCourses = useMemo(() => {
     if (!query.data) return [];

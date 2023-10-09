@@ -8,7 +8,7 @@ export type Curses = {
   associate: string[];
 };
 
-export async function useFetchCurses() {
+export async function useFetchCourses() {
   try {
     const timeoutPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
